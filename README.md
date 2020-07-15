@@ -24,8 +24,14 @@ Plymouth
 -------------------------
 Made by modifying the [Arch Logo](http://karlinux.deviantart.com/art/Arch-Logo-Plymouth-Theme-209553250) theme, which in turn is based on debian-logo.
 
-Copy into `/usr/share/plymouth/themes/minimal-dark` and set the `minimal-dark` as the theme in
-`/etc/plymouth/plymouthd.conf`.
+Added a script which extracts the BIOS image for a flicker-free boot experience (script from: https://github.com/mxre/plymouth-bgrt).
+
+Run:
+
+    cd plymouth
+    sudo ./install.sh
+
+To extract the BGRT logo and install the theme.
 
 SLiM
 -------------------------
