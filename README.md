@@ -29,6 +29,7 @@ Added a script which extracts the BIOS image for a flicker-free boot experience 
 Run:
 
     cd plymouth
+    sudo ./generate.sh
     sudo ./install.sh
 
 To extract the BGRT logo and install the theme.
