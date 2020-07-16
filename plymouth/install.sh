@@ -2,8 +2,12 @@
 
 # Finally, install the theme
 
+# Configurables
+PLYMOUTH_DIR=/usr/share/plymouth/themes
+PLYMOUTH_THEME=minimal-dark-bgrt
+
 install -d ${PLYMOUTH_DIR}/${PLYMOUTH_THEME}
-install -m644 ./minimal-dark.{plymouth,script} ${PLYMOUTH_DIR}/${PLYMOUTH_THEME}/
+install -m644 ./minimal-dark-bgrt.{plymouth,script} ${PLYMOUTH_DIR}/${PLYMOUTH_THEME}/
 # install -m644 theme/bgrt.{plymouth,script} ${PLYMOUTH_DIR}/${PLYMOUTH_THEME}/
 install -m644 ./*.png ${PLYMOUTH_DIR}/${PLYMOUTH_THEME}/
 

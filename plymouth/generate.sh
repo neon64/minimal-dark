@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Configurables
-PLYMOUTH_DIR=/usr/share/plymouth/themes
-PLYMOUTH_THEME=minimal-dark
-
 # Sanity Checks
 if [[ ! -r /sys/firmware/acpi/bgrt/image ]]; then
 	echo "Sorry, I can't read /sys/firmware/acpi/bgrt/image"
@@ -19,9 +15,9 @@ command -v awk >/dev/null 2>&1 || { echo >&2 "I require awk but it's not install
 convert /sys/firmware/acpi/bgrt/image ./bgrt.png
 
 # Replace the placeholders with the image offsets
-< minimal-dark.script.in awk \
+< minimal-dark-bgrt.script.in awk \
 	-v BGRTLEFT=$(</sys/firmware/acpi/bgrt/xoffset) \
 	-v BGRTTOP=$(</sys/firmware/acpi/bgrt/yoffset) \
 	'{gsub (/\$BGRTLEFT\$/, BGRTLEFT);
 	  gsub (/\$BGRTTOP\$/, BGRTTOP);
-	  print}' > ./minimal-dark.script
+	  print}' > ./minimal-dark-bgrt.script
